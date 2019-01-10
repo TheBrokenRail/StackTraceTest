@@ -8,7 +8,6 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int iterations = 1000;
+                int iterations = 10000;
 
                 ArrayList<Long> traceResults = new ArrayList<>();
                 ArrayList<Long> noTraceResults = new ArrayList<>();
@@ -35,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 String average = getString(R.string.trace_avg) + " " + average(traceResults) + "\n" + getString(R.string.no_trace_avg) + " " + average(noTraceResults);
-                String total = getString(R.string.trace_total) + " " + total(traceResults) + "\n" + getString(R.string.no_trace_total) + " " + total(noTraceResults);
-                builder.setMessage(getString(R.string.iterations) + " " + iterations + "\n\n" + average + "\n\n" + total);
+                String percent = getString(R.string.percent_start) + " " + (((average(traceResults) - average(noTraceResults)) / average(traceResults)) * 100) + getString(R.string.percent_end);
+                builder.setMessage(getString(R.string.iterations) + " " + iterations + "\n\n" + average + "\n\n" + percent);
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }
@@ -49,14 +48,6 @@ public class MainActivity extends AppCompatActivity {
             total = total + list.get(i);
         }
         return ((double) total) / list.size();
-    }
-
-    public long total(ArrayList<Long> list) {
-        long total = 0;
-        for (int i = 0; i < list.size(); i++) {
-            total = total + list.get(i);
-        }
-        return total;
     }
 
     private long testTrace() {

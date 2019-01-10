@@ -5,4 +5,6 @@
     <string name="trace_total">Trace Total:</string>
     <string name="no_trace_total">No Trace Total:</string>
     <string name="iterations">Test Iterations:</string>
+    <string name="percent_start">No Trace is</string>
+    <string name="percent_end">% Faster Than Trace</string>
 </resources>

@@ -9,12 +9,12 @@
 
     <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/trace"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/noTrace"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
