@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Stack Trace Test</string>
+    <string name="trace_avg">Trace Average:</string>
+    <string name="no_trace_avg">No Trace Average:</string>
+    <string name="trace_total">Trace Total:</string>
+    <string name="no_trace_total">No Trace Total:</string>
+    <string name="iterations">Test Iterations:</string>
+</resources>
